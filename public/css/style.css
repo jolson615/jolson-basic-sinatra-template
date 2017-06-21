@@ -1,18 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy');
-$ayellow: rgb(240,244,0);
 * {
      background-color:black;
      font-family: 'Chewy', cursive;
      color:white;
-     text-align: center
+     text-align:center;
+}
+
+body {
+    border-style:ridge;
+    border-width:3px;
+    border-color:white;
 }
 
 h1 {
-    color:ayellow;
+    color:rgb(240,244,0);
 }
 
 #header2-1 {
-    color:rgb(0,244,12);
+    color:rgb(0,255,21);
 }
 
 #header2-2 {
@@ -31,3 +36,14 @@ h1 {
     color:rgb(255,0,0);
 }
 
+#header3-4 {
+    color:orange;
+}
+
+#p1 {
+    color:rgb(148, 0, 255); 
+}
+
+#header2-3 {
+    color:rgb(0, 255, 148);
+}
