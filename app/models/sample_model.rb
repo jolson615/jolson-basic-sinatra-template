@@ -1,4 +1,6 @@
-@jokes = {
+def joke(theme, quality, length)
+   
+jokes = {
    :animaljokes => {
       :good => {
          :long => "A duck, a skunk and a deer went out for dinner at a restaurant one night. When it came time to pay, the skunk didn’t have a scent, the deer didn’t have a buck so they put the meal on the duck’s bill.",
@@ -31,55 +33,53 @@
                }
       }
 }
-         
-
-def joke(theme, quality, length)
-         
          if theme == "animals"
             if quality == "good"
                if length == "long"
-                  return @jokes[:animaljokes][:good][:long]
+                  return jokes[:animaljokes][:good][:long]
                elsif length == "short"
-                  return @jokes[:animaljokes][:good][:short]
+                  return jokes[:animaljokes][:good][:short]
                end
             elsif quality == "bad"
                if length == "long"
-                  return @jokes[:animaljokes][:bad][:long]
+                  return jokes[:animaljokes][:bad][:long]
                elsif length == "short"
-                  return @jokes[:animaljokes][:bad][:short]
+                  return jokes[:animaljokes][:bad][:short]
                end
             end
         
          elsif theme == "bars"
             if quality == "good"
                if length == "long"
-                  return @jokes[:barjokes][:good][:long]
+                  return jokes[:barjokes][:good][:long]
                elsif length == "short"
-                  return @jokes[:barjokes][:good][:short]
+                  return jokes[:barjokes][:good][:short]
                end
             elsif quality == "bad"
                if length == "long"
-                  return @jokes[:barjokes][:bad][:long]
+                  return jokes[:barjokes][:bad][:long]
                elsif length == "short"
-                  return @jokes[:barjokes][:bad][:short]
+                  return jokes[:barjokes][:bad][:short]
                end
             end
 
          elsif theme == "knockknocks"
             if quality == "good"
                if length == "long"
-                  return @jokes[:knockknock][:good][:long]
+                  return jokes[:knockknock][:good][:long]
                elsif length == "short"
-                  return @jokes[:knockknock][:good][:short]
+                  return jokes[:knockknock][:good][:short]
                end
             elsif quality == "bad"
                if length == "long"
-                  return @jokes[:knockknock][:bad][:long]
+                  return jokes[:knockknock][:bad][:long]
                elsif length == "short"
-                  return @jokes[:knockknock][:bad][:short]
+                  return jokes[:knockknock][:bad][:short]
                end
             end
             
          end
       
 end
+
+puts joke("knockknocks", "bad", "short")
