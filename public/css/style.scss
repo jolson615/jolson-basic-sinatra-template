@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy');
+$ayellow: rgb(240,244,0);
 * {
      background-color:black;
      font-family: 'Chewy', cursive;
@@ -7,7 +8,7 @@
 }
 
 h1 {
-    color:rgb(240,244,0);
+    color:ayellow;
 }
 
 #header2-1 {
