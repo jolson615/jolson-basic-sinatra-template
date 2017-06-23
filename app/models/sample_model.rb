@@ -1,9 +1,13 @@
 class SnippetySnip
-        def initialize(name="Larry")
+        
+        @@fightlog ||= []
+        
+        def initialize(name="Larry", health=rand(18..22), attack=rand(1..5), speed=rand(8..12))
          @name = name
-         @attack = rand(1..5)
-         @health = rand(18..22)
-         @speed = rand(8..12)
+         @attack = attack
+         @health = health
+         @speed = speed
+         puts "new snippety snip created with name #{@name}, attack #{@attack}, health #{@health}, and speed #{@speed}"
         end
 
         def attack()
@@ -26,9 +30,13 @@ class SnippetySnip
             @health = health
         end
         
+        def self.fightlog
+           @@fightlog  
+        end
         
         def crustacean_altercation(enemy)
-         if self.speed < enemy.speed
+        until self.health == 0 || enemy.health == 0
+         if self.speed <= enemy.speed
             self.health=(self.health - enemy.attack)
             enemy.health=(enemy.health - self.attack)
              if self.health < 0
@@ -37,7 +45,8 @@ class SnippetySnip
              if enemy.health < 0
              enemy.health=(0)
              end
-        elsif self.speed > enemy.speed
+             @@fightlog.push("After the attack, you're left with #{self.health} health and your enemy is left with #{enemy.health} health")
+         elsif self.speed > enemy.speed
             enemy.health=(enemy.health - self.attack)
             self.health=(self.health - enemy.attack)
              if self.health < 0
@@ -46,8 +55,9 @@ class SnippetySnip
              if enemy.health < 0
              enemy.health=(0)
              end
+            @@fightlog.push("After the attack, you're left with #{self.health} health and #{enemy.name} is left with #{enemy.health} health")
          end
-        
-         return "After the attack, you're left with #{self.health} health and #{enemy.name} is left with #{enemy.health} health."
+         puts @@fightlog
+        end #until
         end #method crustacean_altercation
 end #class 

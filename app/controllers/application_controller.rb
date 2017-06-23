@@ -1,7 +1,9 @@
 require './config/environment'
 require './app/models/sample_model'
 
+
 class ApplicationController < Sinatra::Base
+
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -16,16 +18,11 @@ class ApplicationController < Sinatra::Base
   end
   
    post '/fight' do
-     unless @larry
-        @larry = SnippetySnip.new()
-     end
-    
-      unless @enemy
-        @enemy = SnippetySnip.new()
-      end
-      
-      @fightresults = @larry.crustacean_altercation(@enemy)
-      puts "final results: " + @fightresults
+      larry = SnippetySnip.new()
+      enemy = SnippetySnip.new("Shelldon")
+      larry.crustacean_altercation(enemy)
+      @fightlogarray = SnippetySnip.fightlog
+      @x = 0
       erb :fight
   end
   
