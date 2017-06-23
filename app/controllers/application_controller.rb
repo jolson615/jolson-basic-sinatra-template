@@ -15,18 +15,18 @@ class ApplicationController < Sinatra::Base
     erb :pageone
   end
   
-   get '/fight' do
+   post '/fight' do
      unless @larry
         @larry = SnippetySnip.new()
-      end
+     end
     
       unless @enemy
         @enemy = SnippetySnip.new()
       end
-      @fightresults = @larry.crustacean_altercation(@enemy)
       
+      @fightresults = @larry.crustacean_altercation(@enemy)
+      puts "final results: " + @fightresults
       erb :fight
-
   end
   
   post '/finalpage' do
