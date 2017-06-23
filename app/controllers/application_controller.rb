@@ -11,11 +11,11 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
   
-  get '/pageone' do
+  post '/pageone' do
     erb :pageone
   end
   
-   get '/fight' do
+   post '/fight' do
      unless @larry
         @larry = SnippetySnip.new()
       end

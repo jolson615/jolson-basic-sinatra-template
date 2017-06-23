@@ -11,9 +11,12 @@
             clam engaged you in a battle
            
         </h1>
+        <%=@fightresult%>
          <input type="radio" name="winorlose" value ="lobsterpoliticswin">fight<br>
             <input type="radio" name="winorlose" value ="lose">run<br>
-            <form method= "post" action="/finalpage">
+            <form method= "post" action="/fight">
                 <input type="submit" value = "next!">
+                <h2> <%=@fight_result%>
+                </h2>
     </body>
 </html>
