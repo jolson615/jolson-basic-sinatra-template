@@ -11,13 +11,23 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
   
-  get '/pageone' do
+  post '/pageone' do
     erb :pageone
   end
-   get '/fight' do
-    erb :fight
-  end
   
+   post '/fight' do
+     unless @larry
+        @larry = SnippetySnip.new()
+     end
+    
+      unless @enemy
+        @enemy = SnippetySnip.new()
+      end
+      
+      @fightresults = @larry.crustacean_altercation(@enemy)
+      puts "final results: " + @fightresults
+      erb :fight
+  end
   
   post '/finalpage' do
     @winorlose = params["winorlose"]
