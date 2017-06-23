@@ -14,10 +14,20 @@ class ApplicationController < Sinatra::Base
   get '/pageone' do
     erb :pageone
   end
-   get '/fight' do
-    erb :fight
-  end
   
+   get '/fight' do
+     unless @larry
+        @larry = SnippetySnip.new()
+      end
+    
+      unless @enemy
+        @enemy = SnippetySnip.new()
+      end
+      @fightresults = @larry.crustacean_altercation(@enemy)
+      
+      erb :fight
+
+  end
   
   post '/finalpage' do
     @winorlose = params["winorlose"]
