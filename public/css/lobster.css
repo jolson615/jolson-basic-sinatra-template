@@ -12,10 +12,13 @@ body {
     margin-right:150px; 
 }
 
-#button {
+.button {
     font-family: 'Lobster', cursive;
     color:white;
     background-color:rgb(85, 180, 212);
+    height:50px;
+    width:100px;
+    font-size:30px;
 }
 
 p {
